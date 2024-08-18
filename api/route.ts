@@ -7,3 +7,5 @@ export const api = new Hono<{ Bindings: { DB: D1Database } }>()
   .use("*", initAuthConfig(getAuthConfig))
   .use("/api/auth/*", authHandler())
   .route("/api/users", usersRoute)
+
+export type Api = typeof api
